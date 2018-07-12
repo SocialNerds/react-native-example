@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 class EditableItem extends Component {
   constructor(props) {
-    console.log(props, 'contructor')
     super(props);
     this.state = {
       name: props.name,
@@ -12,12 +11,11 @@ class EditableItem extends Component {
   }
 
   render() {
-    console.log(this.state, 'state')
     const {name} = this.state;
     return (
       <View  style={styles.inlineItem}>
         <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1, width: 100}}
+        style={{height: 40, borderColor: 'gray', borderWidth: 1, width: 100, marginLeft: 10}}
         onChangeText={(text) => this.setState({text})}
         value={name}
         />
